@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Calculator</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="css/display.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/keypad.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="calculator__header">
+            <h1 class="calculator__title">Enterprise Calculator</h1>
+            <div class="calculator__controls">
+                <button class="mode-toggle active" data-mode="basic">Basic</button>
+                <button class="mode-toggle" data-mode="scientific">Scientific</button>
+                <button class="theme-toggle" data-theme="dark">🌙</button>
+                <button class="theme-toggle" data-action="history">📋</button>
+            </div>
+        </div>
+
+        <div class="history-panel" id="historyPanel">
+            <!-- History items will be dynamically added here -->
+        </div>
+
+        <div class="display" id="display">
+            <div class="display__memory" id="memoryIndicator"></div>
+            <div class="display__history" id="history"></div>
+            <div class="display__current" id="current">0</div>
+        </div>
+
+        <div class="memory-functions">
+            <button class="btn btn--memory" data-memory="clear">MC</button>
+            <button class="btn btn--memory" data-memory="recall">MR</button>
+            <button class="btn btn--memory" data-memory="add">M+</button>
+            <button class="btn btn--memory" data-memory="subtract">M-</button>
+        </div>
+
+        <div class="scientific-functions" id="scientificFunctions">
+            <button class="btn btn--function" data-function="sin">sin</button>
+            <button class="btn btn--function" data-function="cos">cos</button>
+            <button class="btn btn--function" data-function="tan">tan</button>
+            <button class="btn btn--function" data-function="log">log</button>
+            <button class="btn btn--function" data-function="ln">ln</button>
+            <button class="btn btn--function" data-function="sqrt">√</button>
+            <button class="btn btn--function" data-function="power">x²</button>
+            <button class="btn btn--function" data-function="factorial">x!</button>
+            <button class="btn btn--function" data-function="pi">π</button>
+            <button class="btn btn--function" data-function="e">e</button>
+        </div>
+
+        <div class="keypad" id="keypad">
+            <button class="btn btn--clear" data-action="clear">AC</button>
+            <button class="btn btn--clear" data-action="delete">DEL</button>
+            <button class="btn btn--clear" data-action="undo">↶</button>
+            <button class="btn btn--operator" data-operator="/">÷</button>
+
+            <button class="btn btn--number" data-number="7">7</button>
+            <button class="btn btn--number" data-number="8">8</button>
+            <button class="btn btn--number" data-number="9">9</button>
+            <button class="btn btn--operator" data-operator="*">×</button>
+
+            <button class="btn btn--number" data-number="4">4</button>
+            <button class="btn btn--number" data-number="5">5</button>
+            <button class="btn btn--number" data-number="6">6</button>
+            <button class="btn btn--operator" data-operator="-">−</button>
+
+            <button class="btn btn--number" data-number="1">1</button>
+            <button class="btn btn--number" data-number="2">2</button>
+            <button class="btn btn--number" data-number="3">3</button>
+            <button class="btn btn--operator" data-operator="+">+</button>
+
+            <button class="btn btn--number btn--span-2" data-number="0">0</button>
+            <button class="btn btn--number" data-action="decimal">.</button>
+            <button class="btn btn--equals" data-action="equals">=</button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <!-- JavaScript Files - Load in dependency order -->
+    
+    <!-- Design Patterns -->
+    <script src="js/patterns/singleton-logger.js"></script>
+    <script src="js/patterns/observer-events.js"></script>
+    <script src="js/patterns/strategy-calculations.js"></script>
+    <script src="js/patterns/command-history.js"></script>
+    <script src="js/patterns/state-calculator.js"></script>
+    <script src="js/patterns/repository-storage.js"></script>
+    
+    <!-- MVC Components -->
+    <script src="js/model/calculator-model.js"></script>
+    <script src="js/view/calculator-view.js"></script>
+    <script src="js/controller/calculator-controller.js"></script>
+    
+    <!-- Main Application -->
+    <script src="js/main.js"></script>
+</body>
+</html>
